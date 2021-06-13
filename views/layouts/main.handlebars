@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Discovery</title>
+  <link rel="shortcut icon" type="image/png " href="./assets/images/favicon.png" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+  <!--Header for Main Page-->
+  <header class="flex flex-wrap font-bold justify-center">
+    <a href="./"><img src="/images/local-discovery-logo.png" alt="local-discovery-logo" class="mx-4 w-20 h-30"></a>
+    <div class="flex flex-col items-center justify-center m-2">
+      <h1 class="text-blue-900 text-4xl text-center">LOCAL DISCOVERY</h1>
+      <h2 class="text-center">Choose Your Adventure!</h2>
+    </div>
+    <img id=weatherIcon src="" alt="Current Weather Icon" class="mx-4 w-20 h-30">
+    <div id="weatherDiv" class="flex flex-col items-center my-2 mx-2">
+      <ul class="text-sm">
+        <li id="weatherTemp">Tmp: 22 deg</li>
+        <li id="weatherMax">Max: 35 deg</li>
+        <li id="weatherMin">Min: 14 deg</li>
+      </ul>
+    </div>
+  </header>
+  {{!-- gap-12 --}}
+  <nav class="flex flex-row flex-wrap items-center space-x-6 text-blue-900 text-sm font-bold pb-4">
+    <a href="/profile"> My Passport</a>
+    <a href="/about"> About</a>
+    <!-- if logged Out -->
+    {{#if logged_in}}
+    <a id="logout"> Log Out</a>
+    {{else}}
+    <a href="http://localhost:3001/login"> Log In</a>
+    {{/if}}
+  </nav>
+
+  <body class="text-blue-900 block flex flex-col items-center">
+
+    {{{body}}}
+
+  </body>
+  <script src="/js/weather.js"></script>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+</html>
