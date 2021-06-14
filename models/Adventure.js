@@ -11,6 +11,10 @@ Adventure.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        link: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         image: {
             type: DataTypes.STRING,
             allowNull: false,
