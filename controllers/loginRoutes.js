@@ -28,7 +28,7 @@ router.get('/profile', withAuth, async (req, res) => {
             order: [['name', 'ASC']],
         });
 
-        const adventures = adventureData.map((adventureInfo) => adventureInfo.get({ plain: true}));
+        const adventures = adventureData.map((adventureInfo) => adventureInfo.get({ plain: true }));
 
         res.render('profile', {
             adventures,
@@ -37,29 +37,37 @@ router.get('/profile', withAuth, async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-
-
-
 });
 
-// Prevent non logged in users from viewing the homepage
-// router.get('/', withAuth, async (req, res) => {
-//     try {
-//       const userData = await User.findAll({
-//         attributes: { exclude: ['password'] },
-//         order: [['name', 'ASC']],
-//       });
 
-//       const users = userData.map((project) => project.get({ plain: true }));
+// root/profile/filter
+router.get('/profile/filter/indoor/:indoor/distance/:distance/time/:time', withAuth, async (req, res) => {
+    try {
+        const AllDataSQL = await Adventure.findAll({
+            order: [['name', 'ASC']],
+        });
+        const AllData = AllDataSQL.map((filterData) => filterData.get({ plain: true }));
 
-//       res.render('homepage', {
-//         users,
-//         // Pass the logged in flag to the template
-//         logged_in: req.session.logged_in,
-//       });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
+        const filterIndoor = req.params.indoor;
+        const filterDistance = parseInt(req.params.distance);
+        const filterTime = parseInt(req.params.time);
+
+        var adventures = [];
+
+        AllData.forEach(data => {
+            if (filterIndoor === `${!data.outdoor}` && filterDistance >= data.distance && filterTime >= data.time) {
+                adventures.push(data);
+            }
+        })
+
+        res.render('profile', {
+            adventures,
+        });
+
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
 
 module.exports = router;

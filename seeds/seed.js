@@ -7,11 +7,6 @@ const adventureData = require('./adventureData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  // await User.bulkCreate(userData, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
   await Adventure.bulkCreate(adventureData, {
     returning: true,
   });
