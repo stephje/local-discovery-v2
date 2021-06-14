@@ -1,13 +1,15 @@
-<div class="bg-blue-50 text-2xl font-bold max-w-sm border-8 border-blue-900 rounded-lg w-11/12">
+<div class="max-w-sm rounded-lg w-11/12">
     <h class="pl-4">Hi [name], please pick an adventure below:</h>
 </div>
 
 {{!-- Add a loop, to get all adventures --}}
-<div class="bg-blue-50 text-2xl font-bold max-w-sm border-8 border-blue-900 rounded-lg w-11/12">
-    <a href="./"><img src="/images/local-discovery-logo.png" alt="local-discovery-logo" class="mx-4 w-20 h-30"></a>
-    <div>
-        <h1>Cottesloe Adventure</h1>
-        <p>An adventure around the cottesloe area</p>
+{{#each adventures as |adventure|}}
+<a href="./adventure/{{adventure.link}}" class="flex flex-row flex-wrap border-8 border-blue-900 rounded-lg w-11/12 mt-5">
+    <img src="/images/{{adventure.image}}" alt="local-discovery-logo" class="m-1 w-1/5 h-30">
+    <div class="w-3/4">
+        <h1 class="font-bold text-2xl m-1">{{adventure.name}}</h1>
+        <p>{{adventure.description}}</p>
     </div>
-</div>
+</a>
+{{/each}}
 {{!-- Close the loop --}}
