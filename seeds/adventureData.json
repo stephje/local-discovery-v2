@@ -1,0 +1,9 @@
+[
+    {
+        "name": "Cottesloe Sculpture Trail",
+        "description": "This adventure takes you to see various sculptures around cotteloe. Visit these sculptures with us and we'll tell you interesting facts along the adventure!",
+        "outdoor": "true",
+        "distance": 10000,
+        "time": 3
+    }
+]
