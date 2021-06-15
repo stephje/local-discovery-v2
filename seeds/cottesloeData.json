@@ -13,6 +13,24 @@
         "listitem3": "Sunscreen",
         "listitem4": "Hat",
         "listitem5": "Money for Gelato (optional)",
-        "type": "start"
+        "type": "start",
+        "sequence": 1
+    },
+    {
+        "title": "Clue to Next Waypoint",
+        "icon": "fa-monument",
+        "image": "questionmark.jpg",
+        "alt": "Question Mark",
+        "imgdesc": "Distance from Destination is:",
+        "descriptionheading": "Directions",
+        "description": "Follow the road North. Once you arrive, press the 'Check In' button!",
+        "listheading": "I am...",
+        "listitem1": "Taller than the average person",
+        "listitem2": "Made of metal",
+        "listitem3": "Skeletal",
+        "listitem4": "Close to a road",
+        "listitem5": "something found on every beach",
+        "type": "clue",
+        "sequence": 2
     }
 ]

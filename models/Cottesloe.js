@@ -66,6 +66,10 @@ Cottesloe.init(
         type: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        sequence: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
         }
     },
     {
