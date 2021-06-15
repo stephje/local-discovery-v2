@@ -9,11 +9,15 @@
                 {{!-- How to include icons? --}}
 
                 {{!-- <i class="fas fa-ice-cream float-right p-2 pl-0"></i>
-                <i class="fas fa-sun float-right p-2 pl-0"></i>
-                <i class="fas fa-monument float-right p-2 pl-0"></i> --}}
+                <i class="fas fa-sun float-right p-2 pl-0"></i> --}}
+                <i class="fas {{adventure.icon}} float-right p-2 pl-0"></i>
 
             </div>
             {{!--If statement to check if it's a start card --}}
+
+            <iframe width="320" height="304" loading="lazy"
+                src="https://www.google.com/maps/embed/v1/search?q={{adventure.image}}"
+                class="mx-4 w-11/12 h-80 border-8 border-blue-900 rounded-lg"></iframe>
 
             <p id="imgdesc" class="text-center font-bold pb-2">{{adventure.imgdesc}}</p>
         </div>
@@ -46,4 +50,5 @@
     </div>
 
     {{!-- javascript file to include button response --}}
-    {{!-- <script src="/js/card.js"></script> --}}
+    {{!--
+    <script src="/js/card.js"></script> --}}
