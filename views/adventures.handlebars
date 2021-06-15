@@ -14,13 +14,6 @@
 
             </div>
             {{!--If statement to check if it's a start card --}}
-            {{#if adventure.type === "start" }}
-            <iframe width="320" height="304" loading="lazy" src="{{adventure.image}}"
-                class="mx-4 w-11/12 h-80 border-8 border-blue-900 rounded-lg"></iframe>
-            {{else}}
-            <img src="/images/{{adventure.image}}" alt="{{adventure.imageAlt}}"
-                class=" mr-4 w-2 h-80 border-8 border-blue-900 rounded-lg">
-            {{/if}}
 
             <p id="imgdesc" class="text-center font-bold pb-2">{{adventure.imgdesc}}</p>
         </div>
@@ -53,4 +46,4 @@
     </div>
 
     {{!-- javascript file to include button response --}}
-    <script src="/js/card.js"></script>
+    {{!-- <script src="/js/card.js"></script> --}}

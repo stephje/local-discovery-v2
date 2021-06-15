@@ -1,18 +1,21 @@
 const router = require('express').Router();
-const { Adventure } = require('../../models');
+const { Adventure, Cottesloe} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // root/adventure/cottesloe
 router.get('/cottesloe', withAuth, async (req, res) => {
     try {
-        const adventureData = await Adventure.findAll({
-            order: [['name', 'ASC']],
+        const cottesloeData = await Cottesloe.findAll({
+            order: [['title', 'ASC']],
         });
 
-        const adventures = adventureData.map((adventureInfo) => adventureInfo.get({ plain: true }));
+        const adventures = cottesloeData.map((adventureInfo) => adventureInfo.get({ plain: true }));
+        const adventure = adventures[0];
+        console.log(cottesloeData)
+        console.log(adventures)
 
         res.render('adventures', {
-            adventures,
+            adventure,
             logged_in: req.session.logged_in,
         });
     } catch (err) {
