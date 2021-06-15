@@ -9,9 +9,9 @@ router.get('/cottesloe', withAuth, async (req, res) => {
             order: [['name', 'ASC']],
         });
 
-        const adventures = adventureData.map((adventureInfo) => adventureInfo.get({ plain: true}));
+        const adventures = adventureData.map((adventureInfo) => adventureInfo.get({ plain: true }));
 
-        res.render('cottesloe', {
+        res.render('adventures', {
             adventures,
             logged_in: req.session.logged_in,
         });
@@ -28,9 +28,9 @@ router.get('/kingspark', withAuth, async (req, res) => {
             order: [['name', 'ASC']],
         });
 
-        const adventures = adventureData.map((adventureInfo) => adventureInfo.get({ plain: true}));
+        const adventures = adventureData.map((adventureInfo) => adventureInfo.get({ plain: true }));
 
-        res.render('kingspark', {
+        res.render('adventures', {
             adventures,
             logged_in: req.session.logged_in,
         });
