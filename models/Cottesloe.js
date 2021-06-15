@@ -30,7 +30,10 @@ Cottesloe.init(
         imgdesc: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
+        },
+        descriptionheading: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         description: {
             type: DataTypes.STRING,
