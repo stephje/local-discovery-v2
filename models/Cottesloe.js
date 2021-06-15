@@ -23,6 +23,10 @@ Cottesloe.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        alt: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         imgdesc: {
             type: DataTypes.STRING,
             allowNull: false,

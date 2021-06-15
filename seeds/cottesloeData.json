@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Cottesloe Sculpture Trail",
+        "icon": "fa-monument",
+        "image": "-32.01673%2C115.75186&key=AIzaSyD35Vbfoe4FWuJm8JnPKOCJSFhY-rbgbhA",
+        "alt": "Map",
+        "imgdesc": "Mosman Beach Parking Lot",
+        "description": "To start this adventure, please head to the location provided on the map above. Once you arrive, press the 'Begin' button to get started.",
+        "listheading": "What to bring!",
+        "listitem1": "Walking Shoes",
+        "listitem2": "Water Bottle",
+        "listitem3": "Sunscreen",
+        "listitem4": "Hat",
+        "listitem5": "Money for Gelato (optional)",
+        "type": "start"
+    }
+]
