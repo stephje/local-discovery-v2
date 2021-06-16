@@ -2,7 +2,7 @@
     {
         "name": "Cottesloe Sculpture Trail",
         "link": "cottesloe",
-        "image": "cott.jpeg",
+        "image": "cottesloe/cott.jpg",
         "description": "This adventure takes you to see various sculptures around cotteloe. Visit these sculptures with us and we'll tell you interesting facts along the adventure!",
         "outdoor": "true",
         "distance": 10000,
@@ -11,7 +11,7 @@
     {
         "name": "Kings Park",
         "link": "kingspark",
-        "image": "kingspark.jpg",
+        "image": "kingspark/kingspark.jpg",
         "description": "Explore Kings Park and Botanical Gardens!",
         "outdoor": "true",
         "distance": 5000,

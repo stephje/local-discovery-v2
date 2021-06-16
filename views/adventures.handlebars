@@ -28,10 +28,13 @@
             <p id="imgdesc" class="text-center font-bold pb-2">{{adventure.imgdesc}}</p>
         </div>
         <!-- Card body starts here -->
-        <div class="px-4">
+        <div class="px-4"> 
             <div class="pb-2 border-b-2 border-blue-900">
                 <h2 class="font-bold">{{adventure.descriptionheading}}</h2>
                 <p class="text-sm py-0.5">{{adventure.description}}</p>
+                {{#ifClue}}
+                <p class="text-sm py-0.5">Once you arrive, press the "Check In" button!</p>
+                {{/ifClue}}
             </div>
             <div class="pb-2 border-b-2 border-blue-900">
                 <h2 class="font-bold">{{adventure.listheading}}</h2>
@@ -40,7 +43,12 @@
                     <li>{{adventure.listitem2}}</li>
                     <li>{{adventure.listitem3}}</li>
                     <li>{{adventure.listitem4}}</li>
+                    {{#ifWaypoint adventure.type}}
+                    <li><a class="underline" href="{{adventure.listitem5}}">Artist's website</a></li>
+                    {{/ifWaypoint}}
+                    {{#ifNotWaypoint adventure.type}}
                     <li>{{adventure.listitem5}}</li>
+                    {{/ifNotWaypoint}}
                 </ul>
             </div>
         </div>
