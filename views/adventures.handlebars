@@ -28,11 +28,11 @@
             <p id="imgdesc" class="text-center font-bold pb-2">{{adventure.imgdesc}}</p>
         </div>
         <!-- Card body starts here -->
-        <div class="px-4"> 
+        <div class="px-4">
             <div class="pb-2 border-b-2 border-blue-900">
                 <h2 class="font-bold">{{adventure.descriptionheading}}</h2>
                 <p class="text-sm py-0.5">{{adventure.description}}</p>
-                {{#ifClue}}
+                {{#ifClue adventure.type}}
                 <p class="text-sm py-0.5">Once you arrive, press the "Check In" button!</p>
                 {{/ifClue}}
             </div>
@@ -54,15 +54,28 @@
         </div>
         <!-- Card Buttons Section starts here -->
         <div class="flex justify-center">
-
-            <button id="nextButton"
+            {{#ifStart adventure.type}}
+            <button id="startButton"
                 class="bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Begin</button>
             <button id="resetButton"
                 class="bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Reset</button>
-
+            {{/ifStart}}
+            {{#ifClue adventure.type}}
+            <button id="homeButton"
+                class="homeButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Home</button>
+            <button id="checkinButton"
+                class="checkinButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Check
+                In</button>
+            {{/ifClue}}
+            {{#ifWaypoint adventure.type}}
+            <button id="homeButton"
+                class="homeButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Home</button>
+            <button id="nextButton"
+                class="nextButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Next</button>
+            {{/ifWaypoint}}
         </div>
     </div>
 
     {{!-- javascript file to include button response --}}
     {{!--
-    <script src="/js/card.js"></script> --}}
+    <script src="/js/adventures.js"></script> --}}
