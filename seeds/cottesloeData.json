@@ -31,7 +31,9 @@
         "listitem4": "Close to a road",
         "listitem5": "Something found on every beach",
         "type": "clue",
-        "sequence": 2
+        "sequence": 2,
+        "lat": -32.015888624173954,
+        "lon": 115.75193547975144
     },
     {
         "title": "SHE SELLS SEA SHELLS",
@@ -65,7 +67,9 @@
         "listitem4": "Rocky",
         "listitem5": "I create a frame",
         "type": "clue",
-        "sequence": 4
+        "sequence": 4,
+        "lat": -32.01372806310924,
+        "lon": 115.75282597310539
     },
     {
         "title": "WUYI",
@@ -99,7 +103,9 @@
         "listitem4": "Made of metal",
         "listitem5": "Able to fade into the horizon",
         "type": "clue",
-        "sequence": 6
+        "sequence": 6,
+        "lat": -32.00659688308442,
+        "lon": 115.75172334613231
     },
     {
         "title": "PAUSE",

@@ -34,14 +34,40 @@ router.get('/cottesloe/:seqNo', async (req, res) => {
         });
 
         const adventures = cottesloeData.map((adventureInfo) => adventureInfo.get({ plain: true }));
-        const adventure = adventures[0];
-        console.log(cottesloeData)
         console.log(adventures)
+        const adventure = adventures[0];
 
         res.render('adventures', {
             adventure,
             logged_in: req.session.logged_in,
         });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+
+});
+
+router.get('/cottesloe/:seqNo/location', async (req, res) => {
+    const sequenceNo = req.params.seqNo;
+
+    try {
+        const cottesloeData = await Cottesloe.findAll({
+            where: {
+                sequence: sequenceNo,
+            }
+        });
+
+        const adventures = cottesloeData.map((adventureInfo) => adventureInfo.get({ plain: true }));
+        const adventure = adventures[0];
+
+        location = {
+            latitude: adventure.lat,
+            longitude: adventure.lon
+        };
+
+        console.log(location)
+
+        res.json(location);
     } catch (err) {
         res.status(500).json(err);
     }

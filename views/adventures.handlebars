@@ -65,8 +65,7 @@
                 class="homeButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Home</button>
             {{/when3}}
             {{#when adventure.type 'is' 'clue'}}
-            <button id="checkinButton"
-                class="checkinButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Check
+            <button id="checkInButton" class="bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Check
                 In</button>
             {{/when}}
             {{#when adventure.type 'is' 'waypoint'}}
@@ -77,5 +76,15 @@
     </div>
 
     {{!-- javascript file to include button response --}}
-    {{!--
-    <script src="/js/adventures.js"></script> --}}
+    {{#when adventure.type 'is' 'waypoint'}}
+    <script src="/js/waypoint.js"></script>
+    {{/when}}
+    {{#when adventure.type 'is' 'start'}}
+    <script src="/js/start.js"></script>
+    {{/when}}
+    {{#when adventure.type 'is' 'clue'}}
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD35Vbfoe4FWuJm8JnPKOCJSFhY-rbgbhA&libraries=geometry&v=weekly"
+        async></script>
+    <script src="/js/clue.js"></script>
+    {{/when}}

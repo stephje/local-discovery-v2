@@ -70,6 +70,14 @@ Cottesloe.init(
         sequence: {
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        lat: {
+            type: DataTypes.FLOAT(20,15),
+            allowNull: true,
+        },
+        lon: {
+            type: DataTypes.FLOAT(20,15),
+            allowNull: true,
         }
     },
     {
