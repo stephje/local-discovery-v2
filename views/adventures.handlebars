@@ -14,16 +14,16 @@
 
             </div>
             {{!--If statement to check if it's a start card --}}
-            {{#ifStart adventure.type}}
+            {{#when adventure.type 'is' 'start'}}
             <iframe width="320" height="304" loading="lazy"
                 src="https://www.google.com/maps/embed/v1/search?q={{adventure.image}}"
                 class="mx-4 w-11/12 h-80 border-8 border-blue-900 rounded-lg"></iframe>
-            {{/ifStart}}
+            {{/when}}
 
-            {{#ifNotStart adventure.type}}
+            {{#when adventure.type 'not' 'start'}}
             <img src="/images/{{adventure.image}}" alt="{{adventure.alt}}"
                 class=" mx-4 w-11/12 h-80 border-8 border-blue-900 rounded-lg">
-            {{/ifNotStart}}
+            {{/when}}
 
             <p id="imgdesc" class="text-center font-bold pb-2">{{adventure.imgdesc}}</p>
         </div>
@@ -32,9 +32,9 @@
             <div class="pb-2 border-b-2 border-blue-900">
                 <h2 class="font-bold">{{adventure.descriptionheading}}</h2>
                 <p class="text-sm py-0.5">{{adventure.description}}</p>
-                {{#ifClue adventure.type}}
+                {{#when adventure.type 'is' 'clue'}}
                 <p class="text-sm py-0.5">Once you arrive, press the "Check In" button!</p>
-                {{/ifClue}}
+                {{/when}}
             </div>
             <div class="pb-2 border-b-2 border-blue-900">
                 <h2 class="font-bold">{{adventure.listheading}}</h2>
@@ -43,36 +43,36 @@
                     <li>{{adventure.listitem2}}</li>
                     <li>{{adventure.listitem3}}</li>
                     <li>{{adventure.listitem4}}</li>
-                    {{#ifWaypoint adventure.type}}
+                    {{#when adventure.type 'is' 'waypoint'}}
                     <li><a class="underline" href="{{adventure.listitem5}}">Artist's website</a></li>
-                    {{/ifWaypoint}}
-                    {{#ifNotWaypoint adventure.type}}
+                    {{/when}}
+                    {{#when adventure.type 'not' 'waypoint'}}
                     <li>{{adventure.listitem5}}</li>
-                    {{/ifNotWaypoint}}
+                    {{/when}}
                 </ul>
             </div>
         </div>
         <!-- Card Buttons Section starts here -->
         <div class="flex justify-center">
-            {{#ifStart adventure.type}}
+            {{#when adventure.type 'is' 'start'}}
             <button id="startButton"
                 class="bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Begin</button>
             <button id="resetButton"
                 class="bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Reset</button>
-            {{/ifStart}}
-            {{#ifClue adventure.type}}
+            {{/when}}
+            {{#when3 adventure.type 'orEquals' 'clue' 'waypoint'}}
             <button id="homeButton"
                 class="homeButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Home</button>
+            {{/when3}}
+            {{#when adventure.type 'is' 'clue'}}
             <button id="checkinButton"
                 class="checkinButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Check
                 In</button>
-            {{/ifClue}}
-            {{#ifWaypoint adventure.type}}
-            <button id="homeButton"
-                class="homeButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Home</button>
+            {{/when}}
+            {{#when adventure.type 'is' 'waypoint'}}
             <button id="nextButton"
                 class="nextButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Next</button>
-            {{/ifWaypoint}}
+            {{/when}}
         </div>
     </div>
 
