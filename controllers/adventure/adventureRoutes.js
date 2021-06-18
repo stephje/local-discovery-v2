@@ -1,9 +1,12 @@
 const router = require('express').Router();
 const { Adventure, Cottesloe } = require('../../models');
 const withAuth = require('../../utils/auth');
+const distFrom = require('distance-from');
+// require('dotenv').config();
 
 // root/adventure/cottesloe
 router.get('/cottesloe', withAuth, async (req, res) => {
+
     try {
         const cottesloeData = await Cottesloe.findAll({
             order: [['title', 'ASC']],
@@ -11,8 +14,8 @@ router.get('/cottesloe', withAuth, async (req, res) => {
 
         const adventures = cottesloeData.map((adventureInfo) => adventureInfo.get({ plain: true }));
         const adventure = adventures[0];
-        console.log(cottesloeData)
-        console.log(adventures)
+
+        const user = process.env.DB_USER;
 
         res.render('adventures', {
             adventure,
@@ -34,7 +37,7 @@ router.get('/cottesloe/:seqNo', async (req, res) => {
         });
 
         const adventures = cottesloeData.map((adventureInfo) => adventureInfo.get({ plain: true }));
-        console.log(adventures)
+
         const adventure = adventures[0];
 
         res.render('adventures', {
@@ -60,14 +63,13 @@ router.get('/cottesloe/:seqNo/location', async (req, res) => {
         const adventures = cottesloeData.map((adventureInfo) => adventureInfo.get({ plain: true }));
         const adventure = adventures[0];
 
-        location = {
-            latitude: adventure.lat,
-            longitude: adventure.lon
-        };
+        let userLocation = [req.query.lat, req.query.lon];
+        let waypointLocation = [adventure.lat, adventure.lon]
 
-        console.log(location)
+        let distance = distFrom(userLocation).to(waypointLocation).in('m');
 
-        res.json(location);
+        res.json(distance);
+
     } catch (err) {
         res.status(500).json(err);
     }
