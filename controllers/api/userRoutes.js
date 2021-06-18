@@ -22,7 +22,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-// LOGIN user
+// LOGIN users
 // root/api/users/login
 router.post('/login', async (req, res) => {
   try {
