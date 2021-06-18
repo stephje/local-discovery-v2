@@ -1,7 +1,7 @@
 const checkInButton = document.querySelector("#checkInButton");
 
 checkInButton.addEventListener('click', () => {
-    
+
     //option for getLocation function, prioritizes accuracy over speed
     const options = {
         enableHighAccuracy: true,
@@ -33,9 +33,21 @@ async function ifGeoLocationRetrieved(pos) {
         let path = createNewPath();
         document.location.assign(path)
     } else {
-        console.log("Too far from waypoint")
-        // DISPLAY DISTANCE
-        // DISPLAY FAILURE MESSAGE
+        //DISPLAY ERROR MESSAGE
+        if (distance > 1000) {
+            const distanceKM = distance / 1000
+            const distanceRounded = Math.round(distanceKM)
+            console.log("Too far from waypoint, distance was: ", distanceRounded)
+            // Modify the html
+            document.getElementById("imgdesc").innerHTML = `Distance from Destination is ${distanceRounded}km`;
+            document.getElementById("imgdesc").style.color = "red";
+        } else {
+            const distanceRounded = Math.round(distance)
+            console.log("Too far from waypoint, distance was: ", distanceRounded)
+            // Modify the html
+            document.getElementById("imgdesc").innerHTML = `Distance from Destination is ${distanceRounded}m`;
+            document.getElementById("imgdesc").style.color = "red";
+        }
     }
 };
 
@@ -46,7 +58,7 @@ function error() {
     );
 };
 
-async function getDistance(userLat, userLon){
+async function getDistance(userLat, userLon) {
     //construct request route
     let currentPath = window.location.pathname;
     var queryURL = `${currentPath}/location?lat=${userLat}&lon=${userLon}`

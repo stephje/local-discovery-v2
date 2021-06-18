@@ -27,12 +27,13 @@
 
             <p id="imgdesc" class="text-center font-bold pb-2">{{adventure.imgdesc}}</p>
         </div>
-        <!-- Card body starts here -->
+
         <div class="px-4">
             <div class="pb-2 border-b-2 border-blue-900">
                 <h2 class="font-bold">{{adventure.descriptionheading}}</h2>
                 <p class="text-sm py-0.5">{{adventure.description}}</p>
                 {{#when adventure.type 'is' 'clue'}}
+                {{!-- display distance message instead if too far --}}
                 <p class="text-sm py-0.5">Once you arrive, press the "Check In" button!</p>
                 {{/when}}
             </div>
