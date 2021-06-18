@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, userCottesloe } = require('../../models');
 
 // CREATE new user
 // root/api/users/signup
@@ -9,6 +9,11 @@ router.post('/signup', async (req, res) => {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
+    });
+
+    await userCottesloe.create({
+      sequence: 1,
+      user_id: dbUserData.id
     });
 
     req.session.save(() => {

@@ -40,13 +40,16 @@
 
 <script src="/js/filter.js"></script>
 
-{{!-- Add a loop, to get all adventures --}}
+
 {{#each adventures as |adventure|}}
-<a href="./adventure/{{adventure.link}}/1"
+<a href="./adventure/{{adventure.link}}/{{#with userCotesloe}}{{sequence}}{{/with}}"
     class="flex flex-row flex-wrap border-8 border-blue-900 rounded-lg w-11/12 mt-5 ">
+
     <img src="/images/{{adventure.image}}" alt="local-discovery-logo" class="m-1 w-1/5 h-30">
+
     <div class="w-3/4">
-        <h1 class="font-bold text-2xl m-1">{{adventure.name}}</h1>
+        {{!-- <h1 class="font-bold text-2xl m-1">{{adventure.name}}</h1> --}}
+        <h1 class="font-bold text-2xl m-1">cottesloe sequence no is {{#with userCotesloe}}{{sequence}}{{/with}} </h1>
         <p>{{adventure.description}}</p>
         {{#if adventure.outdoor}}
         <p><b>Location:</b> Outdoors</p>
@@ -58,4 +61,6 @@
     </div>
 </a>
 {{/each}}
+
+
 {{!-- Close the loop --}}
