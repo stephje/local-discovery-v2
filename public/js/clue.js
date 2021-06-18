@@ -82,6 +82,7 @@ function createNewPath() {
     return newPath;
 };
 
+//to get the sequence number of the next card to be displayed
 function getNextSequenceNumber() {
     let currentPath = window.location.pathname;
     let pathComponents = currentPath.split('/');
