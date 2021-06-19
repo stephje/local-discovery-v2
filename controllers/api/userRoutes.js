@@ -72,4 +72,31 @@ router.post('/logout', (req, res) => {
   }
 });
 
+
+//Get response returning sequence number.
+// root/api/users/sequence
+router.get('/sequence', async (req, res) => {
+  //Get User Details for Cottesloe
+  try {
+    const userCotesloeDATA = await userCottesloe.findAll({
+      where: {
+        id: req.session.user_id
+      }
+    });
+    const userCotesloes = userCotesloeDATA.map((adventureInfo) => adventureInfo.get({ plain: true }));
+    const userCotesloe = userCotesloes[0];
+
+    console.log(`---------${userCotesloe.sequence}----------------`)
+
+    // res.send({
+    //   "sequence": `${userCotesloe.sequence}`
+    // });
+    res.send({ "sequence": `${userCotesloe.sequence}` })
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+
+
 module.exports = router;

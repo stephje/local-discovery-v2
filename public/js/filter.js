@@ -19,6 +19,38 @@ const filterAdventures = async (event) => {
 
 };
 
+ContinueViaSequence()
+
 document
     .querySelector('.filter-form')
     .addEventListener('submit', filterAdventures);
+
+// Sequence replace link code with api fetch GET request
+async function ContinueViaSequence() {
+    try {
+        const response = await fetch('/api/users/sequence', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        });
+        console.log(`-------response is ${JSON.stringify(response.body.sequence)}-----------`);
+        console.log(`-------response is ${response.sequence}-----------`);
+
+        document.querySelector('#tests').innerHTML = 'Goodbye';
+
+    } catch (err) {
+        res.status(500).json(err);
+    };
+}
+
+
+// router.get('/', async (req, res) => {
+//     try {
+//       const CatergoryData = await Category.findAll({
+//         include: [Product]
+//       });
+//       res.status(200).json(CatergoryData);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
+
