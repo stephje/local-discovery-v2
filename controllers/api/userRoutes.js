@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, userCottesloe } = require('../../models');
 
 // CREATE new user
 // root/api/users/signup
@@ -9,6 +9,11 @@ router.post('/signup', async (req, res) => {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
+    });
+
+    await userCottesloe.create({
+      sequence: 1,
+      user_id: dbUserData.id
     });
 
     req.session.save(() => {
@@ -22,7 +27,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-// LOGIN user
+// LOGIN users
 // root/api/users/login
 router.post('/login', async (req, res) => {
   try {
@@ -66,5 +71,32 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+
+//Get response returning sequence number.
+// root/api/users/sequence
+router.get('/sequence', async (req, res) => {
+  //Get User Details for Cottesloe
+  try {
+    const userCotesloeDATA = await userCottesloe.findAll({
+      where: {
+        id: req.session.user_id
+      }
+    });
+    const userCotesloes = userCotesloeDATA.map((adventureInfo) => adventureInfo.get({ plain: true }));
+    const userCotesloe = userCotesloes[0];
+
+    console.log(`---------${userCotesloe.sequence}----------------`)
+
+    // res.send({
+    //   "sequence": `${userCotesloe.sequence}`
+    // });
+    res.send({ "sequence": `${userCotesloe.sequence}` })
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+
 
 module.exports = router;

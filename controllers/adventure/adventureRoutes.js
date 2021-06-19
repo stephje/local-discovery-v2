@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Adventure, Cottesloe } = require('../../models');
+const { Adventure, Cottesloe, userCottesloe } = require('../../models');
 const withAuth = require('../../utils/auth');
 const distFrom = require('distance-from');
 // require('dotenv').config();
@@ -15,7 +15,7 @@ router.get('/cottesloe', withAuth, async (req, res) => {
         const adventures = cottesloeData.map((adventureInfo) => adventureInfo.get({ plain: true }));
         const adventure = adventures[0];
 
-        const user = process.env.DB_USER;
+        // const user = process.env.DB_USER;
 
         res.render('adventures', {
             adventure,
@@ -30,6 +30,15 @@ router.get('/cottesloe/:seqNo', async (req, res) => {
     const sequenceNo = req.params.seqNo;
 
     try {
+        //update sequence number 
+        await userCottesloe.update(
+            { sequence: sequenceNo },
+            {
+                where:
+                    { user_id: req.session.user_id }
+            })
+
+
         const cottesloeData = await Cottesloe.findAll({
             where: {
                 sequence: sequenceNo,
@@ -37,8 +46,8 @@ router.get('/cottesloe/:seqNo', async (req, res) => {
         });
 
         const adventures = cottesloeData.map((adventureInfo) => adventureInfo.get({ plain: true }));
-
         const adventure = adventures[0];
+
 
         res.render('adventures', {
             adventure,
