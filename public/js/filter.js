@@ -22,3 +22,4 @@ const filterAdventures = async (event) => {
 document
     .querySelector('.filter-form')
     .addEventListener('submit', filterAdventures);
+

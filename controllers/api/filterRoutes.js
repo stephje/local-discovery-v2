@@ -8,6 +8,8 @@ router.post('/', withAuth, async (req, res) => {
     // console.log(`req.body.distance = ${req.body.distance}`)
     // console.log(`req.body.time = ${req.body.time}`)
     try {
+
+        //Adventure Data
         const AllDataSQL = await Adventure.findAll({
             order: [['name', 'ASC']],
         });

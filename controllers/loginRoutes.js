@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Adventure } = require('../models');
+const { Adventure, userCottesloe } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -21,6 +21,8 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+
+
 // root/profile
 router.get('/profile', withAuth, async (req, res) => {
     try {
@@ -30,7 +32,18 @@ router.get('/profile', withAuth, async (req, res) => {
 
         const adventures = adventureData.map((adventureInfo) => adventureInfo.get({ plain: true }));
 
+        //Get User Details for Cottesloe
+        const userCotesloeDATA = await userCottesloe.findAll({
+            where: {
+                user_id: req.session.user_id
+            }
+        });
+
+        const userCotesloes = userCotesloeDATA.map((adventureInfo) => adventureInfo.get({ plain: true }));
+        const userCotesloe = userCotesloes[0];
+
         res.render('profile', {
+            userCotesloe,
             adventures,
             logged_in: req.session.logged_in,
         });
@@ -55,13 +68,26 @@ router.get('/profile/filter/indoor/:indoor/distance/:distance/time/:time', withA
         var adventures = [];
 
         AllData.forEach(data => {
-            if (filterIndoor === `${!data.outdoor}` && filterDistance >= data.distance && filterTime >= data.time) {
+            if (filterIndoor === `${!data.outdoor} ` && filterDistance >= data.distance && filterTime >= data.time) {
                 adventures.push(data);
             }
         })
 
+        //Get User Details for Cottesloe
+        const userCotesloeDATA = await userCottesloe.findAll({
+            where: {
+                user_id: req.session.user_id
+            }
+        });
+
+        const userCotesloes = userCotesloeDATA.map((adventureInfo) => adventureInfo.get({ plain: true }));
+        const userCotesloe = userCotesloes[0];
+
+
         res.render('profile', {
+            userCotesloe,
             adventures,
+            logged_in: req.session.logged_in,
         });
 
     } catch (err) {
