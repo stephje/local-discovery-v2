@@ -30,12 +30,14 @@ async function ContinueViaSequence() {
     try {
         const response = await fetch('/api/users/sequence', {
             method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
         });
-        console.log(`-------response is ${JSON.stringify(response.body.sequence)}-----------`);
+        console.log(`-------response is ${JSON.stringify(response)}-----------`);
         console.log(`-------response is ${response.sequence}-----------`);
 
-        document.querySelector('#tests').innerHTML = 'Goodbye';
+        document.querySelector('#cottesloe').innerHTML = 'Goodbye';
+        //make url link.
+        //request A element via ID.
+        //Replace the link in that element.
 
     } catch (err) {
         res.status(500).json(err);
