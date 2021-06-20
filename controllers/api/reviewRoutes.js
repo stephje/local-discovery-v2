@@ -3,7 +3,7 @@ const { userCottesloe, userKingspark } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-router.get('/:location', async (req, res) => {
+router.get('/:location', withAuth, async (req, res) => {
     try {
         res.render('review', {
             logged_in: req.session.logged_in,
@@ -16,6 +16,7 @@ router.get('/:location', async (req, res) => {
 router.post('/:location', withAuth, async (req, res) => {
     const rating = parseInt(req.body.finalRating);
     const description = req.body.ratingDescription;
+    const location = req.params.location;
 
     switch (location) {
         case 'cottesloe':
@@ -61,45 +62,30 @@ router.post('/:location', withAuth, async (req, res) => {
     }
 })
 
-
-
-
-
 // root/api/review/cottesloe
-// router.get('/cottesloe', async (req, res) => {
+// router.post('/cottesloe', withAuth, async (req, res) => {
 //     try {
-//         res.render('review', {
-//             logged_in: req.session.logged_in,
-//         });
+
+//         const rating = parseInt(req.body.finalRating);
+//         const description = req.body.ratingDescription;
+
+//         await userCottesloe.update(
+//             {
+//                 ratingNo: rating,
+//                 ratingDesc: description
+//             },
+//             {
+//                 where:
+//                     { user_id: req.session.user_id }
+//             },
+//         )
+
+//         res.redirect(`/profile`)
+
 //     } catch (err) {
+//         console.log(err);
 //         res.status(500).json(err);
 //     }
-// });
-
-// root/api/review/cottesloe
-router.post('/cottesloe', withAuth, async (req, res) => {
-    try {
-
-        const rating = parseInt(req.body.finalRating);
-        const description = req.body.ratingDescription;
-
-        await userCottesloe.update(
-            {
-                ratingNo: rating,
-                ratingDesc: description
-            },
-            {
-                where:
-                    { user_id: req.session.user_id }
-            },
-        )
-
-        res.redirect(`/profile`)
-
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-})
+// })
 
 module.exports = router;

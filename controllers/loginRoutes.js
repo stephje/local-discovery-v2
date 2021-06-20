@@ -53,6 +53,13 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 
+//about
+router.get('/about', (req, res) => {
+    res.render('about', {
+        logged_in: req.session.logged_in,
+    });
+})
+
 // root/profile/filter
 router.get('/profile/filter/indoor/:indoor/distance/:distance/time/:time', withAuth, async (req, res) => {
     try {
@@ -69,8 +76,7 @@ router.get('/profile/filter/indoor/:indoor/distance/:distance/time/:time', withA
 
         AllData.forEach(data => {
 
-            console.log(`data.time = ${data.time}`)
-            if (filterIndoor !== `${data.outdoor} ` && filterDistance >= data.distance && filterTime >= data.time) {
+            if (`${filterIndoor}` == `${!data.outdoor}` && filterDistance >= data.distance && filterTime >= data.time) {
                 adventures.push(data);
             }
         })

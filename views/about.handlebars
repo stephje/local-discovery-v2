@@ -1,0 +1,45 @@
+<div class="flex flex-wrap gap-5 justify-center">
+
+    <div class="bg-blue-50 max-w-sm border-8 border-blue-900 rounded-lg">
+        <!-- Card header starts here -->
+        <div>
+            <div class="text-2xl font-bold pl-4 mb-1.5">
+                <h>About Local Discovery</h>
+
+                <i class="fas fa-map-marked-alt float-right p-2 pl-0"></i>
+
+            </div>
+            <img src="/images/local-discovery-logo.png" alt="logo"
+                class=" mx-4 w-11/12 h-80 border-8 border-blue-900 rounded-lg">
+
+            <p id="imgdesc" class="text-center font-bold pb-2">logo created by Stephanie J.</p>
+        </div>
+
+        <div class="px-4">
+            <div class="pb-2 border-b-2 border-blue-900">
+                <h2 class="font-bold">About the application</h2>
+                <p class="text-sm py-0.5">Made to show-off people's local surrounding</p>
+            </div>
+            <div class="pb-2 border-b-2 border-blue-900">
+                <h2 class="font-bold">Facts!</h2>
+                <ul class="text-sm list-disc list-inside">
+                    <li>Created in 2021</li>
+                    <li>Created during a UWA bootcamp activity</li>
+                    <li>Cottesloe is the first adventure</li>
+                    <li>creaters are Steph and Richard</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Card Buttons Section starts here -->
+        <div class="flex justify-center">
+
+            <button id="myProfile"
+                class="bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">my-profile</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById("myProfile").onclick = function () {
+            location.href = "/";
+        };
+    </script>

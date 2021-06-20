@@ -100,7 +100,7 @@ router.get('/:location', withAuth, async (req, res) => {
       try {
         const kingsparkData = await userKingspark.findAll({ where: { user_id: req.session.user_id } });
 
-        const adventures = cottesloeData.map(adventureInfo => adventureInfo.get({ plain: true }));
+        const adventures = kingsparkData.map(adventureInfo => adventureInfo.get({ plain: true }));
         const adventure = adventures[0];
 
         res.json(adventure)
@@ -112,31 +112,5 @@ router.get('/:location', withAuth, async (req, res) => {
   }
 });
 
-
-// router.get('/cottesloe', withAuth, async (req, res) => {
-//   try {
-//     const cottesloeData = await userCottesloe.findAll({ where: { user_id: req.session.user_id } });
-
-//     const adventures = cottesloeData.map(adventureInfo => adventureInfo.get({ plain: true }));
-//     const adventure = adventures[0];
-
-//     res.json(adventure)
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
-
-// router.get('/kingspark', withAuth, async (req, res) => {
-//   try {
-//     const kingsparkData = await userKingspark.findAll({ where: { user_id: req.session.user_id } });
-
-//     const adventures = cottesloeData.map(adventureInfo => adventureInfo.get({ plain: true }));
-//     const adventure = adventures[0];
-
-//     res.json(adventure)
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
 
 module.exports = router;

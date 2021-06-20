@@ -67,7 +67,7 @@ async function getUserKingspark() {
     }
 
     //get progress
-    var progress = Math.round(userKingspark.sequence / 9 * 100);
+    var progress = Math.round(userKingspark.sequence / 28 * 100);
 
     if (userKingspark.sequence <= 0.125) {
         document.querySelector(`#kingspark-progress`).innerHTML = "0%"
