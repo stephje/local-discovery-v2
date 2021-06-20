@@ -1,118 +1,184 @@
 const router = require('express').Router();
-const { Adventure, Cottesloe, userCottesloe } = require('../../models');
+const {
+    Adventure,
+    Cottesloe,
+    userCottesloe,
+    Kingspark,
+    userKingspark,
+} = require('../../models');
 const withAuth = require('../../utils/auth');
 const distFrom = require('distance-from');
 
 // root/adventure/cottesloe
-router.get('/cottesloe', withAuth, async (req, res) => {
+router.get('/:location', withAuth, async (req, res) => {
+    const location = req.params.location;
 
-    try {
-        const cottesloeData = await Cottesloe.findAll({
-            order: [['sequence', 'ASC']],
-        });
+    switch (location) {
+        case 'cottesloe':
+            try {
+                const adventureData = await Cottesloe.findAll({
+                    order: [['sequence', 'ASC']],
+                });
 
-        const cottesloeArray = cottesloeData.map((adventureInfo) => adventureInfo.get({ plain: true }));
-        const adventure = cottesloeArray[0];
+                const userAdventureData = await userCottesloe.findAll({
+                    where: {
+                        id: req.session.user_id,
+                    },
+                });
 
-        const userCottesloeData = await userCottesloe.findAll({
-            where: {
-              id: req.session.user_id
+                getAdventureStartData(adventureData, userAdventureData);
+            } catch (error) {
+                res.status(500).json(err);
             }
-          });
+            break;
+        case 'kingspark':
+            try {
+                const adventureData = await Kingspark.findAll({
+                    order: [['sequence', 'ASC']],
+                });
 
-          const userCottesloeArray = userCottesloeData.map((adventureInfo) => adventureInfo.get({ plain: true }));
-          const userSequenceNumber = userCottesloeArray[0].sequence;
+                const userAdventureData = await userKingspark.findAll({
+                    where: {
+                        id: req.session.user_id,
+                    },
+                });
 
-          if(userSequenceNumber > 1) {
-            res.redirect(`/adventure/cottesloe/${userSequenceNumber}`)
-          } else {
+                getAdventureStartData(adventureData, userAdventureData);
+            } catch (error) {
+                res.status(500).json(err);
+            }
+            break;
+    }
+
+    function getAdventureStartData(adventureData, userAdventureData) {
+        const adventureDataArray = adventureData.map(adventureInfo =>
+            adventureInfo.get({ plain: true })
+        );
+        const adventure = adventureDataArray[0];
+
+        const userAdventureArray = userAdventureData.map(adventureInfo =>
+            adventureInfo.get({ plain: true })
+        );
+        const userSequenceNumber = userAdventureArray[0].sequence;
+
+        if (userSequenceNumber > 1) {
+            res.redirect(`/adventure/${location}/${userSequenceNumber}`);
+        } else {
             res.render('adventures', {
                 adventure,
                 logged_in: req.session.logged_in,
             });
-          }
-
-    } catch (err) {
-        res.status(500).json(err);
+        }
     }
 });
 
-router.get('/cottesloe/:seqNo', async (req, res) => {
+router.get('/:location/:seqNo', withAuth, async (req, res) => {
     const sequenceNo = req.params.seqNo;
+    const location = req.params.location;
 
-    try {
-        //update sequence number 
-        await userCottesloe.update(
-            { sequence: sequenceNo },
-            {
-                where:
-                    { user_id: req.session.user_id }
-            })
+    switch (location) {
+        case 'cottesloe':
+            try {
+                //update sequence number
+                await userCottesloe.update(
+                    { sequence: sequenceNo },
+                    {
+                        where: { user_id: req.session.user_id },
+                    }
+                );
 
+                //get card data
+                const adventureData = await Cottesloe.findAll({
+                    where: {
+                        sequence: sequenceNo,
+                    },
+                });
 
-        const cottesloeData = await Cottesloe.findAll({
-            where: {
-                sequence: sequenceNo,
+                render(adventureData);
+            } catch (err) {
+                res.status(500).json(err);
             }
-        });
+            break;
+        case 'kingspark':
+            try {
+                //update sequence number
+                await userKingspark.update(
+                    { sequence: sequenceNo },
+                    {
+                        where: { user_id: req.session.user_id },
+                    }
+                );
 
-        const adventures = cottesloeData.map((adventureInfo) => adventureInfo.get({ plain: true }));
+                //get card data
+                const adventureData = await Kingspark.findAll({
+                    where: {
+                        sequence: sequenceNo,
+                    },
+                });
+
+                render(adventureData);
+            } catch (err) {
+                res.status(500).json(err);
+            }
+            break;
+    }
+
+    function render(adventureData) {
+        const adventures = adventureData.map(adventureInfo =>
+            adventureInfo.get({ plain: true })
+        );
         const adventure = adventures[0];
-
 
         res.render('adventures', {
             adventure,
             logged_in: req.session.logged_in,
         });
-    } catch (err) {
-        res.status(500).json(err);
     }
-
 });
 
-router.get('/cottesloe/:seqNo/location', async (req, res) => {
+router.get('/:location/:seqNo/location', async (req, res) => {
     const sequenceNo = req.params.seqNo;
+    const location = req.params.location;
 
-    try {
-        const cottesloeData = await Cottesloe.findAll({
-            where: {
-                sequence: sequenceNo,
+    switch (location) {
+        case 'cottesloe':
+            try {
+                const adventureData = await Cottesloe.findAll({
+                    where: {
+                        sequence: sequenceNo,
+                    },
+                });
+                calculateDistance(adventureData);
+            } catch (error) {
+                res.status(500).json(err);
             }
-        });
+            break;
+        case 'kingspark':
+            try {
+                const adventureData = await Kingspark.findAll({
+                    where: {
+                        sequence: sequenceNo,
+                    },
+                });
+                calculateDistance(adventureData);
+            } catch (error) {
+                res.status(500).json(err);
+            }
+            break;
+    }
 
-        const adventures = cottesloeData.map((adventureInfo) => adventureInfo.get({ plain: true }));
+    function calculateDistance(adventureData) {
+        const adventures = adventureData.map(adventureInfo =>
+            adventureInfo.get({ plain: true })
+        );
         const adventure = adventures[0];
 
         let userLocation = [req.query.lat, req.query.lon];
-        let waypointLocation = [adventure.lat, adventure.lon]
+        let waypointLocation = [adventure.lat, adventure.lon];
 
         let distance = distFrom(userLocation).to(waypointLocation).in('m');
-
         res.json(distance);
-
-    } catch (err) {
-        res.status(500).json(err);
     }
-
-});
-
-// root/adventure/kingspark
-router.get('/kingspark', withAuth, async (req, res) => {
-    try {
-        const adventureData = await Adventure.findAll({
-            order: [['name', 'ASC']],
-        });
-
-        const adventures = adventureData.map((adventureInfo) => adventureInfo.get({ plain: true }));
-
-        res.render('adventures', {
-            adventures,
-            logged_in: req.session.logged_in,
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-
 });
 
 module.exports = router;

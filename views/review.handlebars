@@ -1,0 +1,39 @@
+<div class="w-full max-w-xs">
+  <form class="review-form flex flex-col border-8 border-blue-900 p-1 rounded-lg w-11/12 mt-5 max-w-md">
+    <div class="mb-2 flex-col gap-y-0.5">
+      <label class="block text-gray-700 text-sm font-bold mb-1" for="ratingDescription">
+        Please provide feedback your feedback!
+      </label>
+      <input
+        class="w-full align-top break-all h-20 px-4 mb-2 bg-gray-100 border-blue-900 text-gray-700 placeholder-gray-600 border rounded-lg "
+        id="ratingDescription" type="text">
+    </div>
+
+    <div class="mb-2 flex flex-row gap-y-1 space-x-3">
+      <label for="ratingInput1">1</label><br>
+      <label for="ratingInput2">2</label><br>
+      <label for="ratingInput3">3</label><br>
+      <label for="ratingInput4">4</label><br>
+      <label for="ratingInput5">5</label><br>
+    </div>
+
+    <div class="mb-2 flex flex-row gap-y-0.5 space-x-2">
+      <input type="radio" id="ratingInput1" name="ratingInput1" value=1>
+      <input type="radio" id="ratingInput2" name="ratingInput1" value=2>
+      <input type="radio" id="ratingInput3" name="ratingInput1" value=3>
+      <input type="radio" id="ratingInput4" name="ratingInput1" value=4>
+      <input type="radio" id="ratingInput5" name="ratingInput1" value=5>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+        type="submit">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+</div>
+
+<script src="/js/review.js"></script>

@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Kings Park Trail",
+        "icon": "fa-monument",
+        "image": "-31.96022%2C115.84215&key=AIzaSyD35Vbfoe4FWuJm8JnPKOCJSFhY-rbgbhA&zoom=17",
+        "alt": "Map",
+        "imgdesc": "Wadjuk Car Park",
+        "descriptionheading": "Getting Started",
+        "description": "To start this adventure, please head to the location provided on the map above. Once you arrive, press the 'Begin' button to get started.",
+        "listheading": "What to bring!",
+        "listitem1": "Walking Shoes",
+        "listitem2": "Water Bottle",
+        "listitem3": "Sunscreen",
+        "listitem4": "Hat",
+        "listitem5": "Money for Refreshments (Optional)",
+        "type": "start",
+        "sequence": 1
+    },
+    {
+        "title": "Waypoint Clue",
+        "icon": "fa-monument",
+        "image": "general/questionmark.jpg",
+        "alt": "Question Mark",
+        "imgdesc": "Distance from Destination is:",
+        "descriptionheading": "Directions",
+        "description": "Follow the road North.",
+        "listheading": "I am...",
+        "listitem1": "Taller than an average person",
+        "listitem2": "Made of metal",
+        "listitem3": "Skeletal",
+        "listitem4": "Close to a road",
+        "listitem5": "Something found on every beach",
+        "type": "clue",
+        "sequence": 2,
+        "lat": -32.015888624173954,
+        "lon": 115.75193547975144
+    }
+]

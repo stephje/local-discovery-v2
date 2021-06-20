@@ -73,6 +73,10 @@
             <button id="nextButton"
                 class="nextButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Next</button>
             {{/when}}
+            {{#when adventure.type 'is' 'end'}}
+            <button id="completeButton"
+                class="completeButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Complete</button>
+            {{/when}}
         </div>
     </div>
 
@@ -85,4 +89,7 @@
     {{/when}}
     {{#when adventure.type 'is' 'clue'}}
     <script src="/js/clue.js"></script>
+    {{/when}}
+    {{#when adventure.type 'is' 'end'}}
+    <script src="/js/end.js"></script>
     {{/when}}

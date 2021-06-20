@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, userCottesloe } = require('../../models');
+const { User, userCottesloe, userKingspark } = require('../../models');
 
 // CREATE new user
 // root/api/users/signup
@@ -12,6 +12,11 @@ router.post('/signup', async (req, res) => {
     });
 
     await userCottesloe.create({
+      sequence: 1,
+      user_id: dbUserData.id
+    });
+
+    await userKingspark.create({
       sequence: 1,
       user_id: dbUserData.id
     });
