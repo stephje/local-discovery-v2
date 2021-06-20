@@ -20,6 +20,8 @@ const createNewPath = async (event) => {
         headers: { 'Content-Type': 'application/json' },
     });
 
+    document.location.replace(newPath);
+
 };
 
 document
