@@ -69,8 +69,7 @@ router.get('/profile/filter/indoor/:indoor/distance/:distance/time/:time', withA
 
         AllData.forEach(data => {
 
-            console.log(`data.time = ${data.time}`)
-            if (filterIndoor !== `${data.outdoor} ` && filterDistance >= data.distance && filterTime >= data.time) {
+            if (`${filterIndoor}` == `${!data.outdoor}` && filterDistance >= data.distance && filterTime >= data.time) {
                 adventures.push(data);
             }
         })
