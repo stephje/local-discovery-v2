@@ -53,6 +53,13 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 
+//about
+router.get('/about', (req, res) => {
+    res.render('about', {
+        logged_in: req.session.logged_in,
+    });
+})
+
 // root/profile/filter
 router.get('/profile/filter/indoor/:indoor/distance/:distance/time/:time', withAuth, async (req, res) => {
     try {
