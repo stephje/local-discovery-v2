@@ -3,9 +3,9 @@ const createNewPath = async (event) => {
 
     let currentPath = window.location.pathname;
     let pathComponents = currentPath.split('/');
-    Adventure = pathComponents[3]
+    Adventure = pathComponents[2]
     newPath = `/api/review/${Adventure}`
-    console.log(Adventure)
+
 
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
