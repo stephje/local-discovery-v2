@@ -1,30 +1,30 @@
-<div class="rounded-lg w-full max-w-xs">
-    <h>Choose from the adventures below:</h>
+<div class="rounded-lg w-full max-w-xs content-center text-center">
+    <h class="text-center">Choose from the adventures below:</h>
 </div>
 
-<div class="w-full max-w-xs">
-    <form class="filter-form flex flex-col border-8 border-blue-900 p-1 rounded-lg w-11/12 mt-5 max-w-md">
+<div class="w-full max-w-xs m-0 flex flex-row justify-center">
+    <form class="filter-form flex flex-col border-8 border-blue-900 p-1 m-0 rounded-lg w-11/12 mt-5 max-w-md">
 
-        <div class="mb-2 flex flex-row gap-y-0.5">
+        <div class="mb-2 flex flex-row flex-wrap gap-y-0.5">
             <label class="block text-gray-700 text-sm font-bold mb-1" for="indoors">
                 Indoor:
             </label>
             <input class="ml-2" id="indoors" type="checkbox">
         </div>
 
-        <div class="mb-2 flex flex-row gap-y-0.5">
+        <div class="mb-2 flex flex-col flex-wrap gap-y-0.5">
             <label class="block text-gray-700 text-sm font-bold mb-1" for="distance">
                 Distance (0-10000m):
             </label>
-            <input class="bg-gray-200 rounded ml-2" id="distance" type="number" name="distance" placeholder=" distance"
-                min="0" max="10000">
+            <input class="bg-gray-200 rounded ml-2 w-36" id="distance" type="number" name="distance"
+                placeholder=" distance" min="0" max="10000">
         </div>
 
-        <div class="mb-2 flex flex-row gap-y-0.5">
+        <div class="mb-2 flex flex-col flex-wrap gap-y-0.5">
             <label class="block text-gray-700 text-sm font-bold mb-1" for="time">
                 Time (0-300min):
             </label>
-            <input class="bg-gray-200 rounded ml-2" id="time" type="number" name="time" placeholder=" time" min="0"
+            <input class="bg-gray-200 rounded ml-2 w-36" id="time" type="number" name="time" placeholder=" time" min="0"
                 max="300">
         </div>
 
@@ -38,14 +38,15 @@
     </form>
 </div>
 
+
 {{#each adventures as |adventure|}}
+{{!-- w-11/12 max-w-md --}}
 <a id="{{adventure.link}}" href="/adventure/{{adventure.link}}/"
-    class="flex flex-row flex-wrap border-8 border-blue-900 rounded-lg w-11/12 mt-5 ">
-
-    <img src="/images/{{adventure.image}}" alt="local-discovery-logo" class="m-1 w-1/5 h-30">
-
-    <div class="w-3/4">
-        <h1 class="font-bold text-2xl m-1">{{adventure.name}}</h1>
+    class="flex flex-row flex-wrap border-8 border-blue-900 rounded-lg mt-5 p-1">
+    <img src="/images/{{adventure.image}}" alt="local-discovery-logo" class="m-0 h-30 sm:w-64 md:w-3/12">
+    {{!-- w-3/4 --}}
+    <div class="m-1 h-30 sm:w-64 md:w-8/12">
+        <h1 class="font-bold text-lg m-1">{{adventure.name}}</h1>
         <p>{{adventure.description}}</p>
         {{#if adventure.outdoor}}
         <p><b>Location:</b> Outdoors</p>
@@ -54,9 +55,16 @@
         {{/if}}
         <p><b>Distance:</b> {{adventure.distance}}m</p>
         <p><b>Time:</b> {{adventure.time}}min</p>
+        {{!-- progress --}}
         <p id="{{adventure.link}}-date">{{adventure.date}}</p>
+        {{!-- progress bar --}}
+        <p><b>Current Status:</b></p>
+        <div id="{{adventure.link}}-progress" class="w-full bg-gray-200 rounded border-2 border-blue-900">
+            <div id="{{adventure.link}}-bar" class="h-6 bg-green-400 text-center"></div>
+        </div>
     </div>
 </a>
+
 {{/each}}
 
 <script src="/js/filter.js"></script>
