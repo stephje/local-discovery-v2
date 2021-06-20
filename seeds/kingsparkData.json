@@ -218,7 +218,7 @@
     {
         "title": "PIONEER WOMEN'S MEMORIAL",
         "icon": "fa-monument",
-        "image": "kingspark/waypoints/ ",
+        "image": "kingspark/waypoints/pioneerwomensmemorial.jpeg",
         "alt": "Statue and fountain in the middle of a pond",
         "imgdesc": "STATUE BY MARGARET PRIEST",
         "descriptionheading": "Did you know?",
@@ -257,7 +257,7 @@
         "image": "kingspark/waypoints/watergardenpavillion.jpeg",
         "alt": "small pavillion in water garden",
         "imgdesc": " ",
-        "descriptionheading": " ",
+        "descriptionheading": "Description",
         "description": "Small pavillion in the Water Garden overlooking a stream and pond",
         "listheading": "About",
         "listitem1": "A tranquil escape from the city",
@@ -269,13 +269,49 @@
         "sequence": 15
     },
     {
+        "title": "Waypoint Clue",
+        "icon": "fa-monument",
+        "image": "general/questionmark.jpg",
+        "alt": "Question Mark",
+        "imgdesc": "Distance from Destination is:",
+        "descriptionheading": "Directions",
+        "description": "Continue to follow the path. Take a right hand turn where it intersects another path, and continue on keeping to the right hand side.",
+        "listheading": "I am...",
+        "listitem1": "Sandy",
+        "listitem2": "A circular shape",
+        "listitem3": "Adjacent a path",
+        "listitem4": "Have a large triangular stone at one end",
+        "listitem5": "A culturally significant site",
+        "type": "clue",
+        "sequence": 16,
+        "lat": -31.964121776196972,
+        "lon": 115.83899380674043 
+    },
+    {
+        "title": "BEEDAWONG",
+        "icon": "fa-monument",
+        "image": "kingspark/waypoints/beedawong.jpeg",
+        "alt": "beedawong meeting place",
+        "imgdesc": "MEETING PLACE",
+        "descriptionheading": "Description",
+        "description": "A stone amphitheatre, meeting place and performance area",
+        "listheading": "About",
+        "listitem1": "Kings Park is an important ceremonial and cultural location.",
+        "listitem2": "Beedawong is used as a venue for ongoing Noongar cultural activities.",
+        "listitem3": "The six large rocks surrounding this area represent the six seasons of the Noongar calendar.",
+        "listitem4": "Beedawong was designed by Noongar artist Richard Walley and landscape architect David Smith from Plan E.",
+        "listitem5": "Beedawong means 'celebration' or 'meeting place'.",
+        "type": "waypoint",
+        "sequence": 17
+    },
+    {
         "title": "ADVENTURE COMPLETE!",
         "icon": "fa-monument",
-        "image": "cottesloe/botanicalcafe.jpeg",
+        "image": "kingspark/botanicalcafe.jpeg",
         "alt": "Botanical Cafe",
         "imgdesc": "BOTANICAL CAFE",
         "descriptionheading": "WHAT NOW?",
-        "description": "Why not enjoy the city views or check out the gallery shop?",
+        "description": "Why not enjoy some refreshments, admire the city views or check out the gallery shop?",
         "listheading": "Some Suggestions below:",
         "listitem1": "Enjoy the city views",
         "listitem2": "Check out the Rio Tinto Naturescape",
@@ -283,6 +319,6 @@
         "listitem4": "Aspects of Kings Park Gallery Shop",
         "listitem5": "Frasers Restaurant",
         "type": "end",
-        "sequence": 16
+        "sequence": 18
     }
 ]
