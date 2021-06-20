@@ -1,14 +1,30 @@
-//get a new path then load the page accordingly
-document.querySelector('.completeButton').addEventListener('click', () => {
-    let path = createNewPath();
-    document.location.assign(path)
-});
+const createNewPath = async (event) => {
+    event.preventDefault();
 
-//Take the current path, split it into components, rebuild it with the last component as the new sequence number
-function createNewPath() {
     let currentPath = window.location.pathname;
     let pathComponents = currentPath.split('/');
+    Adventure = pathComponents[2]
+    newPath = `/api/review/${Adventure}`
 
-    newPath = `/api/review/${pathComponents[2]}`
-    return newPath;
+    console.log(`-----------------${JSON.stringify(Adventure)}----------------`)
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    dateFinished = dd + '/' + mm + '/' + yyyy;
+
+
+    const response = await fetch(`/api/completion/${Adventure}`, {
+        method: 'POST',
+        body: JSON.stringify({ dateFinished }),
+        headers: { 'Content-Type': 'application/json' },
+    });
+
+
 };
+
+document
+    .querySelector('#completeButton')
+    .addEventListener('click', createNewPath);
