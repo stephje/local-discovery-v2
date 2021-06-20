@@ -3,8 +3,10 @@ const reviewAdventures = async (event) => {
 
     let currentPath = window.location.pathname;
     let pathComponents = currentPath.split('/');
-    Adventure = pathComponents[2]
+    Adventure = pathComponents[3]
 
+
+    console.log(Adventure)
 
     var ratingDescription = document.querySelector('#ratingDescription').value;
 

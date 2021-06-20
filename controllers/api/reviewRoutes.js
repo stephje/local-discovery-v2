@@ -16,6 +16,7 @@ router.get('/:location', withAuth, async (req, res) => {
 router.post('/:location', withAuth, async (req, res) => {
     const rating = parseInt(req.body.finalRating);
     const description = req.body.ratingDescription;
+    const location = req.params.location;
 
     switch (location) {
         case 'cottesloe':
