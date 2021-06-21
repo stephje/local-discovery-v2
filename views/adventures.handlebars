@@ -40,12 +40,12 @@
                     <li>{{adventure.listitem2}}</li>
                     <li>{{adventure.listitem3}}</li>
                     <li>{{adventure.listitem4}}</li>
-                    {{#when adventure.type 'is' 'waypoint'}}
-                    <li><a class="underline" href="{{adventure.listitem5}}">Artist's website</a></li>
-                    {{/when}}
-                    {{#when adventure.type 'not' 'waypoint'}}
+                    {{#when4 adventure.type 'andEquals' 'waypoint' adventure.adventure 'cottesloe'}}
+                    <li id='finalListItem'><a class="underline" href="{{adventure.listitem5}}">Artist's website</a></li>
+                    {{/when4}}
+                    {{#when4 adventure.type 'orNotEquals' 'waypoint' adventure.adventure 'cottesloe'}}
                     <li>{{adventure.listitem5}}</li>
-                    {{/when}}
+                    {{/when4}}
                 </ul>
             </div>
         </div>
@@ -57,10 +57,6 @@
             <button id="resetButton"
                 class="bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Reset</button>
             {{/when}}
-            {{#when3 adventure.type 'orEquals' 'clue' 'waypoint'}}
-            <button id="homeButton"
-                class="homeButton bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Home</button>
-            {{/when3}}
             {{#when adventure.type 'is' 'clue'}}
             <button id="checkInButton" class="bg-blue-300 py-0.5 px-2 rounded-lg border-2 border-blue-900 m-0.5">Check
                 In</button>

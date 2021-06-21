@@ -43,7 +43,7 @@ async function getUserCottesloe() {
     //get progress
     var progress = Math.round(userCottesloe.sequence / 8 * 100);
 
-    if (userCottesloe.sequence <= 0.125) {
+    if (progress <= 13) {
         document.querySelector(`#cottesloe-progress`).innerHTML = "0%"
 
     } else {
@@ -69,7 +69,7 @@ async function getUserKingspark() {
     //get progress
     var progress = Math.round(userKingspark.sequence / 28 * 100);
 
-    if (userKingspark.sequence <= 0.125) {
+    if (progress <= 4) {
         document.querySelector(`#kingspark-progress`).innerHTML = "0%"
 
     } else {

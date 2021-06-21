@@ -1,5 +1,6 @@
 [
     {
+        "adventure": "kingspark",
         "title": "Kings Park Trail",
         "icon": "fa-monument",
         "image": "-31.96022%2C115.84215&key=AIzaSyD35Vbfoe4FWuJm8JnPKOCJSFhY-rbgbhA&zoom=17",
@@ -17,6 +18,7 @@
         "sequence": 1
     },
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -36,6 +38,7 @@
         "lon": 115.84266517093477
     },
     {
+        "adventure": "kingspark",
         "title": "FLORAL CLOCK",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/floralclock.jpeg",
@@ -53,6 +56,7 @@
         "sequence": 3
     },
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -72,6 +76,7 @@
         "lon": 115.8427613603505
     },
     {
+        "adventure": "kingspark",
         "title": "SYMBIOTICA at BOTANIC GARDENS ENTRANCE",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/botanicgardenentrance.jpeg",
@@ -89,6 +94,7 @@
         "sequence": 5
     },
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -108,6 +114,7 @@
         "lon": 115.84223681067353
     },
     {
+        "adventure": "kingspark",
         "title": "BOTANIC PAVILION",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/terrace.jpeg",
@@ -125,6 +132,7 @@
         "sequence": 7
     }, 
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -144,6 +152,7 @@
         "lon": 115.84107089493561
     },
     {
+        "adventure": "kingspark",
         "title": "GIJA JUMULU",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/gijajumulu.jpeg",
@@ -161,6 +170,7 @@
         "sequence": 9
     },
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -180,6 +190,7 @@
         "lon": 115.8395028421628
     },
     {
+        "adventure": "kingspark",
         "title": "FIVE BANKSIAS MOSAIC",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/fivebanksias.jpeg",
@@ -197,6 +208,7 @@
         "sequence": 11
     },
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -216,6 +228,7 @@
         "lon": 115.83908349647601
     },
     {
+        "adventure": "kingspark",
         "title": "PIONEER WOMEN'S MEMORIAL",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/pioneerwomensmemorial.jpeg",
@@ -233,6 +246,7 @@
         "sequence": 13
     },
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -252,6 +266,7 @@
         "lon": 115.83899380674043 
     },
     {
+        "adventure": "kingspark",
         "title": "WATER GARDEN PAVILION",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/watergardenpavilion.jpeg",
@@ -269,6 +284,7 @@
         "sequence": 15
     },
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -288,6 +304,7 @@
         "lon": 115.83858361437021
     },
     {
+        "adventure": "kingspark",
         "title": "BEEDAWONG",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/beedawong.jpeg",
@@ -305,6 +322,7 @@
         "sequence": 17
     },
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -324,6 +342,7 @@
         "lon": 115.83730714847646
     },
     {
+        "adventure": "kingspark",
         "title": "MARLEE PAVILION",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/marlee.jpeg",
@@ -341,6 +360,7 @@
         "sequence": 19
     },
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -360,6 +380,7 @@
         "lon": 115.83976698185947
     },
     {
+        "adventure": "kingspark",
         "title": "Lotterywest Federation Walkway Bridge",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/walkway.jpeg",
@@ -377,6 +398,7 @@
         "sequence": 21
     },
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -396,6 +418,7 @@
         "lon": 115.84456094223502
     },
     {
+        "adventure": "kingspark",
         "title": "STATE WAR MEMORIAL",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/warmemorial.jpeg",
@@ -413,6 +436,7 @@
         "sequence": 23
     },
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -432,6 +456,7 @@
         "lon": 115.8438638976382
     },
     {
+        "adventure": "kingspark",
         "title": "FLAME OF REMEMBRANCE",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/flame.jpeg",
@@ -449,6 +474,7 @@
         "sequence": 25
     },
     {
+        "adventure": "kingspark",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -468,6 +494,7 @@
         "lon": 115.84419639764363
     },
     {
+        "adventure": "kingspark",
         "title": "ROTARY WISHING WELL",
         "icon": "fa-monument",
         "image": "kingspark/waypoints/wishingwell.jpeg",
@@ -485,6 +512,7 @@
         "sequence": 27
     },
     {
+        "adventure": "kingspark",
         "title": "ADVENTURE COMPLETE!",
         "icon": "fa-monument",
         "image": "kingspark/botanicalcafe.jpeg",
