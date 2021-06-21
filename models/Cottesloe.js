@@ -11,6 +11,10 @@ Cottesloe.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        adventure: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         title: {
             type: DataTypes.STRING,
             allowNull: false,

@@ -1,5 +1,6 @@
 [
     {
+        "adventure": "cottesloe",
         "title": "Cottesloe Sculpture Trail",
         "icon": "fa-monument",
         "image": "-32.01673%2C115.75186&key=AIzaSyD35Vbfoe4FWuJm8JnPKOCJSFhY-rbgbhA",
@@ -17,6 +18,7 @@
         "sequence": 1
     },
     {
+        "adventure": "cottesloe",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -36,6 +38,7 @@
         "lon": 115.75193547975144
     },
     {
+        "adventure": "cottesloe",
         "title": "SHE SELLS SEA SHELLS",
         "icon": "fa-monument",
         "image": "cottesloe/waypoints/shell.jpg",
@@ -53,6 +56,7 @@
         "sequence": 3
     },
     {
+        "adventure": "cottesloe",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -72,6 +76,7 @@
         "lon": 115.75282597310539
     },
     {
+        "adventure": "cottesloe",
         "title": "WUYI",
         "icon": "fa-monument",
         "image": "cottesloe/waypoints/wuyi.jpg",
@@ -89,6 +94,7 @@
         "sequence": 5
     },
     {
+        "adventure": "cottesloe",
         "title": "Waypoint Clue",
         "icon": "fa-monument",
         "image": "general/questionmark.jpg",
@@ -108,6 +114,7 @@
         "lon": 115.75172334613231
     },
     {
+        "adventure": "cottesloe",
         "title": "PAUSE",
         "icon": "fa-monument",
         "image": "cottesloe/waypoints/pause.jpg",
@@ -125,6 +132,7 @@
         "sequence": 7
     },
     {
+        "adventure": "cottesloe",
         "title": "ADVENTURE COMPLETE!",
         "icon": "fa-ice-cream",
         "image": "cottesloe/cottbeach.jpg",

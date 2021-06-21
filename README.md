@@ -1,4 +1,4 @@
-# local-discovery-v2
+# Local Discovery V2
 
 ## Project Outline
 
@@ -8,9 +8,9 @@ Local Discovery invites users to embark on any one of a series of curated advent
 
 Users can leave an adventure at any time, and pick up where they left off when they next load the page. 
 
-## User Story
-<!-- to be added -->
-<!-- ![User Story Map](./assets/images/user-story-map.jpg) -->
+## User Story Map
+
+![User Story Map](./public/images/user-story-map.jpg)
 
 ## Technology Used
 
@@ -19,7 +19,7 @@ Users can leave an adventure at any time, and pick up where they left off when t
 * [BCrypt](https://www.npmjs.com/package/bcrypt)
 
 ### Server & Deployment
-* [NODEjs](https://nodejs.org/en/docs/)
+* [Node.js](https://nodejs.org/en/docs/)
 * [Heroku](https://devcenter.heroku.com/categories/reference)
 
 ### Database
@@ -28,7 +28,7 @@ Users can leave an adventure at any time, and pick up where they left off when t
 ### Templated Structure
 * [Tailwind CSS](https://tailwindcss.com/)
 * [Handlebars](https://handlebarsjs.com/)
-* [JAWsDB](https://www.jawsdb.com/docs/)
+* [JawsDB](https://www.jawsdb.com/docs/)
 * [Express](https://www.npmjs.com/package/express)
 
 ### API
@@ -36,12 +36,12 @@ Users can leave an adventure at any time, and pick up where they left off when t
 * [Geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) 
 
 ### Other
-* [OpenWeather One Call API](https://openweathermap.org/api/one-call-api)
+* [Distance-From](https://www.npmjs.com/package/distance-from)
 
 ## Design Notes
 
 * Utilises geolocation web api data to determine a user's position
-* Utilises Google Map API & Distance Matrix Service to determine distance between user and a given waypoint
+* Utilises Distance-From NPM package to determine distance between user and a given waypoint
 * Determines check-in success based on user's distance from waypoint
 * Saves user progress to client-side storage
 * Ability to reset adventure progress from adventure start pages
@@ -59,6 +59,12 @@ Users can leave an adventure at any time, and pick up where they left off when t
 [Video Demonstration](https://youtu.be/5YMzU5p7pjw)
 
 [Presentation Slides](https://1drv.ms/p/s!Aj5LHamJOUb-lW-QZQCn1Ixv45mv?e=OkYkgK)
+
+## Credits and Thanks
+
+[Sunil More](https://stackoverflow.com/users/2741799/sunil-more)
+via [Stack Overflow](https://stackoverflow.com/questions/33316562/how-to-compare-a-value-in-handlebars),
+for code that was used as a basis for a custom Handlebars helper.
 
 ## Screenshots of Deployed Application
 
