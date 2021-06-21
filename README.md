@@ -32,11 +32,11 @@ Users can leave an adventure at any time, and pick up where they left off when t
 * [Express](https://www.npmjs.com/package/express)
 
 ### API
-* [Google Maps API](https://developers.google.com/maps) 
-* [Google Maps Distance Matrix Service](https://developers.google.com/maps/documentation/javascript/distancematrix) 
 * [OpenWeather One Call API](https://openweathermap.org/api/one-call-api)
 * [Geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) 
 
+### Other
+* [OpenWeather One Call API](https://openweathermap.org/api/one-call-api)
 
 ## Design Notes
 
@@ -56,9 +56,9 @@ Users can leave an adventure at any time, and pick up where they left off when t
 
 [Github Repository](https://github.com/stephje/local-discovery-v2)
 
-<!-- [Video of DEMO](Link to youtube video goes here) -->
+[Video Demonstration](https://youtu.be/5YMzU5p7pjw)
 
-[Presentation Slides](https://onedrive.live.com/edit.aspx?cid=fe463989a91d4b3e&page=view&resid=FE463989A91D4B3E!2799&parId=FE463989A91D4B3E!101&app=PowerPoint)
+[Presentation Slides](https://1drv.ms/p/s!Aj5LHamJOUb-lW-QZQCn1Ixv45mv?e=OkYkgK)
 
 ## Screenshots of Deployed Application
 
