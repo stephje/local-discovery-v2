@@ -69,5 +69,7 @@ for code that was used as a basis for a custom Handlebars helper.
 ## Screenshots of Deployed Application
 
 ### Main Page - Mobile View
+![User Story Map](./public/images/mobile-view.PNG)
 
-<!-- ![Deployed Website - Mobile View](./assets/images/mobile.png) -->
+### Main Page - Web View
+![User Story Map](./public/images/web-view.PNG)
